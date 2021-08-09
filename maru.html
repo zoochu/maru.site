@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마루기획사</title>
+    <link href="./maru.css" rel="stylesheet">
+    <script src="./common.js"></script>
+    <link href="./slick-default/slick.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="./js/slick.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- 마루기획 상단바 시작-->
+    <header>
+        <div class="head">
+            <a href="maru.html"><img src="./photo/h_logo.png"></a>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="maru_company.html">COMPANY</a>
+                </li>
+
+                <li>
+                    <a href="#">ARTIST</a>
+                </li>
+
+                <li><a href="#">NEWS&NOTICE</a></li>
+
+                <li><a href="#">AUDITION</a></li>
+            </ul>
+        </div>
+
+        <div class="menu-b">
+            <ul>
+                <li> <a href="#"><img src="./photo/email_icon.png"></a></li>
+                <li> <a href="#"><img src="./photo/location_icon.png"></a></li>
+                <li> <a href="#"><img src="./photo/magnifying_icon.png"></a></li>
+            </ul>
+        </div>
+
+    </header>
+    <!-- 마루기획 상단바 끝 -->
+
+    
+    <!-- 마루기획 메인 시작-->
+    <main>
+        <div class="main">
+            <div class="main-title">
+                <p>MAROO ENTERPRISE</p>
+                <b>M</b><span>usic&</span><b>A</b><span>rtist</span><br>
+                <b>R</b><span>eader</span><b>O</b><span>f</span><b>O</b><span>riginality</span>
+            </div>
+        
+            <div class="slider">
+                <div>
+                    <img src="./photo/visual_jihoon.jpg">
+                </div>
+                <div>
+                    <img src="./photo//visual_norazo.jpg">
+                </div>
+                <div>
+                    <img src="./photo/visual_ghost.jpg">
+                </div>
+                <div>
+                    <img src="./photo/visual_moonhee.jpg">
+                </div>
+                <div>
+                    <img src="./photo/visual_seungwoo.jpg">
+                </div>
+                <div>
+                    <img src="./photo/visual_teen_img.jpg">
+                </div>
+
+            </div>
+
+        </div>
+      
+    
+
+        <div class="main2">
+            <p class="blue">음악,영화,드라마,공연 등 <b>엔터테인먼트</b><span>의</span></p>
+            <p>모든 영역으로의 사업 확장을 하고 있으며</p>
+            <p class="grey">글로벌 시대에 발맞추어 해외 비즈니스 역량 강화로 콘텐츠 수출에 앞장서고 있습니다.</p>
+            
+            <button href="#">READ MORE ></button>
+        </div>
+
+        <div class="main3">
+            <div class = slider1>
+                
+                    <img src="./photo/1623729501_12407.jpg">
+                    <img src="./photo/1603159233_94218.jpg">
+                    <img src="./photo/1595495748_19366.jpg">
+                    <img src="./photo/1595487271_81093.jpg">
+                    <img src="./photo/1595485786_21099.jpg">
+                    <img src="./photo/1595487150_60990.jpg">
+                    <img src="./photo/1595491711_80263.jpg">
+                
+           
+            </div>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('.slider1').slick({
+                        arrows:true,
+                        // dots: true,
+                        infinite: true,
+                        slidesToShow: 5,
+                        slidesToScroll: 1,
+                        autoplay:true,
+                        autoplaySpeed:2000,
+                        // fade: true,
+                        cssEase:'linear' 
+                         });
+                });
+                </script>
+            <!-- <li style="background:url(/img/maru/1595495748_19366.jpg) no-repeat left top; background-size:cover;">
+                <div class="personal_color" data-color="#a3d7e0"></div>
+                <div class="text_wrap">
+                    <p>TEEN TEEN</p>
+                    <a href="http://maroocorp.co.kr/artist_view.php?pk=6">PROFILE <i class="xi-angle-right"></i></a>
+                </div>
+            </li>
+                    <li style="background:url(/img/maru/1595487271_81093.jpg) no-repeat left top; background-size:cover;">
+                <div class="personal_color" data-color="#e9c1ca"></div>
+                <div class="text_wrap">
+                    <p>PARK JIHOON</p>
+                    <a href="http://maroocorp.co.kr/artist_view.php?pk=2">PROFILE <i class="xi-angle-right"></i></a>
+                </div>
+            </li>
+                    <li style="background:url(/img/maru/1595485786_21099.jpg) no-repeat left top; background-size:cover;">
+                <div class="personal_color" data-color="#a6c1d0"></div>
+                <div class="text_wrap">
+                    <p>NORAZO</p>
+                    <a href="http://maroocorp.co.kr/artist_view.php?pk=3">PROFILE <i class="xi-angle-right"></i></a>
+                </div>
+            </li>
+                    <li style="background:url(/img/maru/1595487150_60990.jpg) no-repeat left top; background-size:cover;">
+                <div class="personal_color" data-color="#7f8a87"></div>
+                <div class="text_wrap">
+                    <p>CHOI MOON HEE</p>
+                    <a href="http://maroocorp.co.kr/artist_view.php?pk=4">PROFILE <i class="xi-angle-right"></i></a>
+                </div>
+            </li>
+                    <li style="background:url(/img/maru/1595491711_80263.jpg) no-repeat left top; background-size:cover;">
+                <div class="personal_color" data-color="#626977"></div>
+                <div class="text_wrap">
+                    <p>KWON SEUNG WOO</p>
+                    <a href="http://maroocorp.co.kr/artist_view.php?pk=7">PROFILE <i class="xi-angle-right"></i></a>
+                </div>
+            </li> -->
+         
+        </div>
+
+        <div class="main4">
+            <div class="left">
+                <p>마루기획 기준일 및 주주명부 폐쇄기간 설정 공고</p>
+                <span>마루기획 기준일 및 주주명부 폐쇄기간 설정 공고 회사의 자사주 매입과...</span>
+            </div>
+
+            <div class="right">
+                <ul>
+                    <li><a href="#">박지훈 팔색조 매력어디까지? 청량 매력 가득 콘셉 </a><span>16:20</span></li>
+                    <li><a href="#">박지훈 새 미니앨범 'My Collection' 콘셉트 트레일러 </a><span>16:18</span></li>
+                    <li><a href="#">박지훈, 움직이는 화보 그 자체... 해사한 소년美'물씬' </a><span>16:16</span></li>
+                    <li><a href="#">'컴백'박지훈 무드 스포일러 영상 공개,해사한 소년미 </a><span>16:16</span></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- 마루기획 메인끝 -->
+
+
+    <!-- 마루기획 하단시작 -->
+    <footer>
+        <fieldset>
+            <div class="bottom-logo"><img src="./photo/f_logo.png"></div>
+
+            <ul>
+                <li><div class="middle-top">마루기획 주식회사 | 대표이사:이재혁 | 회사주소:서울시 강남구 학동로 23길 55 3층 마루기획</div></li>
+                <li><div class="middle-middle">대표번호 02-3443-6612</div></li>
+
+                <li><div class="middle-bottom"><b>COPYRIGHT (C) 2020 MAROO. ALL RIGHTS RESERVED. DESIGN BY NEWBIRD</b></div></li>
+            </ul>
+
+            <div class="bottom-right">
+                <ul>
+                    <li><a href="#"><img src="photo/sns_naverpost.png"></a></li>
+                    <li><a href="#"><img src="photo/sns_twitter.png"></a></li>
+                    <li><a href="#"><img src="photo/sns_insta.png"></a></li>
+                    <li><a href="#"><img src="photo/sns_facebook.png"></a></li>
+                    <li><a href="#"><img src="photo/sns_youtube.png"></a></li>
+                    <li><a href="#"><img src="photo/sns_vlive.png"></a></li>
+                </ul>
+            </div>
+        
+        </fieldset>    
+    </footer>
+    <!-- 마루기획 하단끝 -->
+
+</body>
+</html>
