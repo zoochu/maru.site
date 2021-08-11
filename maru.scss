@@ -31,20 +31,40 @@ header{
         }
 
 .menu{
+    
+
     ul{
         li {
             
             list-style-type: none;
-            
+            flex-shrink: 0;
             display:flex;
-            padding: 30px;
+            margin: 30px;
             word-spacing: 120px;
             justify-content: center;
             float:left;
+            position: relative;
             
-                a{
+        
+            
+            a{
                 text-decoration: none;
                 color: black;
+               &::after{
+                   content: "";
+                   display: block;
+                   width: 0;
+                   height: 6px;
+                   background: rgba(94,174,186,0.5);
+                   position: absolute;
+                   bottom:0px;
+                   left: 0;
+                    transition: 0.5s;
+                    z-index:0;
+                    // display: none;
+                    animation: reverse;
+                }
+                &:hover::after{width: 100%;}
                 
                 }
             }
@@ -52,9 +72,9 @@ header{
            
         }
     }
-.menu ul li:hover{text-decoration: teal;}
 
-.menu-b{
+
+.menu-b{ 
     ul{
         li {
             list-style-type: none;
@@ -99,13 +119,26 @@ header{
     }
 }
 
+    .s_btn_prev{
+     position: absolute;
+     font-size: 26px;
+     img{cursor: pointer;}
+    
+    }
+    .s_btn_next{
+        position: absolute;
+        img{cursor: pointer;}
+       }
+
 
 
 .main2{
     padding: 110px 0 110px; 
     text-align: center; 
-    background: url(./img/newbird/main_bg.png) no-repeat left top;
+    background: url(./photo/main_bg.png) no-repeat left top;
     background-size: cover;
+    // opacity: 0;
+    // animation: fade-up 0.5s both;
     .blue{color: #5eaeba;
         font-size: 40px;
         b{}
@@ -146,12 +179,25 @@ header{
         padding:80px 40px;
         background:#e5ecee8f;
         width: 100%;
-        
+
+        &::before{content: '';
+            display: block;
+            width: 40px;
+            height: 5px;
+            background: #5eaeba;
+            position: absolute;
+            top: 85px;
+            left: 110px;
+        }
+
+        }
         
         p{
+            text-align: left;
             font-size: 35px;
             margin: 0 0 30px;
             padding: 20px 70px 0;
+            color: black;
         }
         span{
             color: #9ba1ad;
@@ -186,9 +232,9 @@ header{
         }
         
     }
-}
 
 
+    
 // 마루기획 메인 끝
 
 
@@ -260,16 +306,191 @@ fieldset{
 
 
 // company페이지
-.company{
+.secondpage{
     position: relative;
-    padding: 30vh;
+    background:#f7f8fa;
+}
+.company{
+    background:#f7f8fa;
+    position: relative;
+    padding-top: 30vh;
+    // padding-bottom: 0%;
     text-align: center;
-    line-height: 100px;
+    // line-height: 100px;
 
     h2{
-        font-weight: lighter;
+    //    text-decoration:10px underline;
+    //    text-decoration-color: #5eaeba46; 
+        position: relative;
+        font-weight: 100;
         font-size: 50px;
+        font-family: 'Montserrat', sans-serif;
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 16%;
+            height: 10px;
+            bottom: 1px;
+            top:40px;
+            left: 42%;
+            z-index: 0;
+            background-color: rgba(171,208,217,0.3);
+            
+            
+            }
     }
-    p{text-align: center;}
-    button{}
+    
+    }
+    p{
+        text-align: center;
+        color:#9ba1ad;
+        margin-top: 30px;
+        font-size: 20px;
+
+    }
+    .btn1{
+        font-size: 20px;
+        font-weight: 900;
+        padding: 20px 140px ;
+        color:white;
+        border: none;
+        background-color: #5eaeba;
+        margin-right: 35px;
+        margin-top: 100px;
+        cursor: pointer;
+    }
+    .btn2{
+        font-size: 20px;
+        font-weight: 900;
+        padding: 20px 140px ;
+        color:white;
+        border: none;
+        background-color: #212224;
+        margin-top: 100px;
+        cursor: pointer;
+    }
+
+.secondpage-2{
+    background:white;
+    margin: 7% 5%;
+    border-radius: 20px;
+}
+.company2{
+    // padding: 80px 0 80px; 
+    padding-top: 10vh;
+    text-align: center; 
+    background: url(./img/newbird/main_bg.png) no-repeat left top;
+    background-size: cover;
+    
+
+    .blue{color: #5eaeba;
+        font-size: 40px;
+        b{}
+        span{color: black;}
+    }
+    p{font-size: 40px; 
+   }
+    .grey{
+        font-size: 15px;
+        color: #9ba1ad;
+        margin: 20px 0 30px;
+    }}
+
+
+.company3{
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 10vh;
+    line-height: 35px;
+    text-align: center;
+   
+  
+    img{
+        padding: 5% 40%;
+        border-radius: 10px;
+        background:#f7f8fa;
+    }
+    p{ color: #9ba1ad;}
+    .color_black{color: black;}
+    .color_mint{ color: #5eaeba;
+        font-weight: bolder;}
+}
+
+.company4{
+    padding-top: 5%;
+    padding-left: 10%;
+    // display: flex;
+    // padding-right: -20vh;
+
+    h2{padding-bottom: 5%;
+        padding-top: 10%;
+        font-size: 40px;
+        font-weight: lighter;
+        &::before{
+            content: '';
+            display: block;
+            width: 40px;
+            height: 5px;
+            background: #5eaeba;
+            position: absolute;
+            margin: -13px 0px;
+            // top:10px;
+            left:205px;
+        }
+    }
+
+    img{
+        padding-left: 10%;
+        margin-right: -186px;}
+    }
+
+.company4-1{
+    text-align: center;
+    padding-bottom: 10px;
+    display: flex;
+    padding-left: 200px;
+    width: 100%;
+    margin: 0 auto;
+    // color: white;
+    .a{background: url("./photo/about_icon_bg01.png") no-repeat left top;
+       padding: 0;
+       width: 330px;
+       height: 330px;
+       flex-shrink: 0;
+       transform: translateX(19%);
+       padding: 50px 30px;
+       line-height: 40px;
+       
+       
+       
+        img{}
+        p{position: relative;
+            color: white;
+        }
+    }
+    .b{background: url("./photo/about_icon_bg02.png") no-repeat;
+        padding: 0;
+        width: 330px;
+        height: 330px;
+        flex-shrink: 0;
+        transform: translateX(9%); 
+        padding: 50px 70px;
+        line-height: 40px;
+        img{}
+        p{position: relative;
+            color: white;}
+    }
+    .c{background: url("./photo/about_icon_bg03.png") no-repeat;
+        padding: 0%;
+        width: 330px;
+       height: 330px;
+       flex-shrink: 0;
+       padding: 50px 30px;
+       line-height: 40px;
+    //    transform: translateX(10%);
+        img{}
+        p{position: relative;
+            color: white;}
+    }
 }

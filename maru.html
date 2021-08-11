@@ -39,9 +39,9 @@
 
         <div class="menu-b">
             <ul>
-                <li> <a href="#"><img src="./photo/email_icon.png"></a></li>
+                <li> <a href="http://maroocorp.co.kr/theme/basic"><img src="./photo/email_icon.png"></a></li>
                 <li> <a href="#"><img src="./photo/location_icon.png"></a></li>
-                <li> <a href="#"><img src="./photo/magnifying_icon.png"></a></li>
+                <li> <a href="#!"><img src="./photo/magnifying_icon.png"></a></li>
             </ul>
         </div>
 
@@ -59,6 +59,7 @@
             </div>
         
             <div class="slider">
+             
                 <div>
                     <img src="./photo/visual_jihoon.jpg">
                 </div>
@@ -79,6 +80,33 @@
                 </div>
 
             </div>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('.slider').slick({
+                        arrows:true,
+                        // dots: true,
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        autoplay:false,
+                        autoplaySpeed:2000,
+                        // fade: true,
+                        cssEase:'linear' 
+                         });
+                });
+            </script>
+
+            <!-- <div class="s_btn_prev">
+                <img src="./photo/visual_prev.png"> 
+                <span class="">MAROO ENTERPRISE</span>
+            </div>
+            <div class="s_btn_next">
+             
+                <img src="./photo/visual_next.png"> 
+                <span><b>M</b>usic &amp; <b>A</b>rtist <b>R</b>eader <b>O</b>f <b>O</b>riginality</span>
+               ''
+            </div> -->
 
         </div>
       
@@ -109,7 +137,7 @@
             <script type="text/javascript">
                 $(document).ready(function(){
                     $('.slider1').slick({
-                        arrows:true,
+                        arrows:false,
                         // dots: true,
                         infinite: true,
                         slidesToShow: 5,
@@ -204,6 +232,58 @@
         </fieldset>    
     </footer>
     <!-- 마루기획 하단끝 -->
+
+<script>    
+    window.onload = init;
+    let s_btn,slider;
+    let main;
+    let currentPage = 0;
+    // var flipTimer;
+
+    function init(){
+        s_btn = document.querySelectorAll('.s_btn');
+        slider = document.querySelector('.slide ul');
+        mainpage_1 = document.getElementById("main");
+
+        function update(){
+            if(currentPage == 0){
+                s_btn_next[0].style="opacity:0.3"
+            }else{
+                s_btn_next[0].style="opacity:1";
+            }
+
+            if(currentPage == 2){
+                s_btn_prev[1].style="opacity:0.3"
+            }else{
+                s_btn_prev[1].style="opacity:1";
+            }
+        }
+        update();
+
+        for(let i = 0; i < s_btn_next.length; i++){
+
+            s_btn[i].addEventListener('click',function(){
+                if(i==0){
+                    if(currentPage > 0){
+                        currentPage--;
+                    }
+                }else{
+                    
+                    if(currentPage < 2){ currentPage++; }
+                }
+                update();
+                slider.style = `transform: translateX(${-1690*currentPage}px)`;
+                       
+                    
+            });   
+        }
+    } 
+    </script>
+
+
+
+
+
 
 </body>
 </html>

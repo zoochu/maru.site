@@ -34,15 +34,18 @@ header {
 
 .menu ul li {
   list-style-type: none;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 30px;
+  margin: 30px;
   word-spacing: 120px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   float: left;
+  position: relative;
 }
 
 .menu ul li a {
@@ -50,9 +53,23 @@ header {
   color: black;
 }
 
-.menu ul li:hover {
-  -webkit-text-decoration: teal;
-          text-decoration: teal;
+.menu ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 6px;
+  background: rgba(94, 174, 186, 0.5);
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 0;
+  animation: reverse;
+}
+
+.menu ul li a:hover::after {
+  width: 100%;
 }
 
 .menu-b ul li {
@@ -97,10 +114,27 @@ header {
   height: 100%;
 }
 
+.s_btn_prev {
+  position: absolute;
+  font-size: 26px;
+}
+
+.s_btn_prev img {
+  cursor: pointer;
+}
+
+.s_btn_next {
+  position: absolute;
+}
+
+.s_btn_next img {
+  cursor: pointer;
+}
+
 .main2 {
   padding: 110px 0 110px;
   text-align: center;
-  background: url(./img/newbird/main_bg.png) no-repeat left top;
+  background: url(./photo/main_bg.png) no-repeat left top;
   background-size: cover;
 }
 
@@ -159,28 +193,41 @@ header {
   width: 100%;
 }
 
-.main4 .left p {
+.main4 .left::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: #5eaeba;
+  position: absolute;
+  top: 85px;
+  left: 110px;
+}
+
+.main4 p {
+  text-align: left;
   font-size: 35px;
   margin: 0 0 30px;
   padding: 20px 70px 0;
+  color: black;
 }
 
-.main4 .left span {
+.main4 span {
   color: #9ba1ad;
   font-size: 16px;
   padding: 20px 70px 0;
 }
 
-.main4 .right {
+.right {
   width: 100%;
   padding: 80px 40px;
 }
 
-.main4 .right ul {
+.right ul {
   display: block;
 }
 
-.main4 .right ul li {
+.right ul li {
   list-style: none;
   padding: 10px;
   width: 100%;
@@ -188,14 +235,14 @@ header {
   float: left;
 }
 
-.main4 .right ul li a {
+.right ul li a {
   text-decoration: none;
   font-size: 20px;
   color: black;
   padding: 0 50px;
 }
 
-.main4 .right ul li span {
+.right ul li span {
   color: #9ba1ad;
   font-size: 16px;
 }
@@ -252,19 +299,215 @@ fieldset .bottom-right ul li a img {
           align-items: right;
 }
 
-.company {
+.secondpage {
   position: relative;
-  padding: 30vh;
+  background: #f7f8fa;
+}
+
+.company {
+  background: #f7f8fa;
+  position: relative;
+  padding-top: 30vh;
   text-align: center;
-  line-height: 100px;
 }
 
 .company h2 {
-  font-weight: lighter;
+  position: relative;
+  font-weight: 100;
   font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.company p {
+.company h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16%;
+  height: 10px;
+  bottom: 1px;
+  top: 40px;
+  left: 42%;
+  z-index: 0;
+  background-color: rgba(171, 208, 217, 0.3);
+}
+
+p {
   text-align: center;
+  color: #9ba1ad;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.btn1 {
+  font-size: 20px;
+  font-weight: 900;
+  padding: 20px 140px;
+  color: white;
+  border: none;
+  background-color: #5eaeba;
+  margin-right: 35px;
+  margin-top: 100px;
+  cursor: pointer;
+}
+
+.btn2 {
+  font-size: 20px;
+  font-weight: 900;
+  padding: 20px 140px;
+  color: white;
+  border: none;
+  background-color: #212224;
+  margin-top: 100px;
+  cursor: pointer;
+}
+
+.secondpage-2 {
+  background: white;
+  margin: 7% 5%;
+  border-radius: 20px;
+}
+
+.company2 {
+  padding-top: 10vh;
+  text-align: center;
+  background: url(./img/newbird/main_bg.png) no-repeat left top;
+  background-size: cover;
+}
+
+.company2 .blue {
+  color: #5eaeba;
+  font-size: 40px;
+}
+
+.company2 .blue span {
+  color: black;
+}
+
+.company2 p {
+  font-size: 40px;
+}
+
+.company2 .grey {
+  font-size: 15px;
+  color: #9ba1ad;
+  margin: 20px 0 30px;
+}
+
+.company3 {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 10vh;
+  line-height: 35px;
+  text-align: center;
+}
+
+.company3 img {
+  padding: 5% 40%;
+  border-radius: 10px;
+  background: #f7f8fa;
+}
+
+.company3 p {
+  color: #9ba1ad;
+}
+
+.company3 .color_black {
+  color: black;
+}
+
+.company3 .color_mint {
+  color: #5eaeba;
+  font-weight: bolder;
+}
+
+.company4 {
+  padding-top: 5%;
+  padding-left: 10%;
+}
+
+.company4 h2 {
+  padding-bottom: 5%;
+  padding-top: 10%;
+  font-size: 40px;
+  font-weight: lighter;
+}
+
+.company4 h2::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: #5eaeba;
+  position: absolute;
+  margin: -13px 0px;
+  left: 205px;
+}
+
+.company4 img {
+  padding-left: 10%;
+  margin-right: -186px;
+}
+
+.company4-1 {
+  text-align: center;
+  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.company4-1 .a {
+  background: url("./photo/about_icon_bg01.png") no-repeat left top;
+  padding: 0;
+  width: 330px;
+  height: 330px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transform: translateX(19%);
+          transform: translateX(19%);
+  padding: 50px 30px;
+  line-height: 40px;
+}
+
+.company4-1 .a p {
+  position: relative;
+  color: white;
+}
+
+.company4-1 .b {
+  background: url("./photo/about_icon_bg02.png") no-repeat;
+  padding: 0;
+  width: 330px;
+  height: 330px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transform: translateX(9%);
+          transform: translateX(9%);
+  padding: 50px 70px;
+  line-height: 40px;
+}
+
+.company4-1 .b p {
+  position: relative;
+  color: white;
+}
+
+.company4-1 .c {
+  background: url("./photo/about_icon_bg03.png") no-repeat;
+  padding: 0%;
+  width: 330px;
+  height: 330px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 50px 30px;
+  line-height: 40px;
+}
+
+.company4-1 .c p {
+  position: relative;
+  color: white;
 }
 /*# sourceMappingURL=maru.css.map */
