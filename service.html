@@ -16,7 +16,7 @@
 <body>
 
     <!-- 마루기획 상단바 시작-->
-    <header>
+    <header id="hd">
         <div class="head">
             <a href="index.html"><img src="./photo/h_logo.png"></a>
         </div>
@@ -44,6 +44,94 @@
                 <li> <a href="#!"><img src="./photo/magnifying_icon.png"></a></li>
             </ul>
         </div>
+        <script>
+            $(document).ready(function(){
+                var nav =$('header');
+                var navoffset = $('header').offset();
+
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 100){
+                    nav.addClass('on')
+                }else{
+
+                    nav.removeClass('on')
+                }
+               
+            });
+            });
+
+    //         var mySwiper = new Swiper ('.artist_pc', {
+	// 	autoplay:true,
+	// 	loop: true,
+	// 	/*scrollbar: {
+	// 	el: '.artist_pc .swiper-scrollbar',
+	// 	draggable: true,
+	// 	 },		*/
+	// 	slidesPerView :'auto',
+	// 	centeredSlides : true
+	//   }) ;
+
+
+	// // scroll, sns
+	// $(document).scroll(function(){
+	// 	var sct = $(window).scrollTop();
+	// 	var docH = $(document).height();
+	// 	var fH = $("#ft").height();
+	// 	var position = docH - (sct+fH);
+
+
+		
+	// 	//2020-10-13 hd 스크롤 이벤트 추가
+	// 	if(sct > 200) {
+	// 	   $('#hd').addClass('on');
+	// 	} else{
+	// 	  $('#hd').removeClass('on');
+	// 	}
+
+
+
+
+	// 	if (sct > position) {
+	// 		$(".scroll img").attr("src", "../theme/basic/img/newbird/scroll_top.png");
+	// 		$(".scroll, .sns_wrap").addClass("fix");
+
+	// 		$(".scroll.fix").on("click", function() {
+	// 			$("html, body").stop().animate({scrollTop:0}, '500');
+	// 			return false;
+	// 		});
+
+	// 	} else {
+	// 		$(".scroll img").attr("src", "../theme/basic/img/newbird/scroll_down.png");
+	// 		$(".scroll, .sns_wrap").removeClass("fix");
+
+	// 		$(".scroll").on("click", function() {
+	// 			$("html, body").stop().animate({scrollTop: docH }, '500');
+	// 			return false;
+	// 		});
+	// 	}
+
+
+	// 	// 메인 효과주기 ( 메인배너 하단 텍스트 )
+	// 	var winH = $(window).height()/2;
+	// 	var docB = sct + winH;
+	// 	var scrollAni01 = $('.scrollAni01').offset().top;
+	// 	var scrollAni02 = $('.scrollAni02').offset().top;
+	
+	// 	if(docB > scrollAni01){
+	// 		$('.scrollAni01').addClass('on')
+	// 	};
+
+	// 	if(docB > scrollAni02){
+	// 		$('.scrollAni02').addClass('on')
+	// 	};
+
+
+
+	// }) ;  
+
+	
+</script>
+
 
     </header>
     <!-- 마루기획 상단바 끝 -->

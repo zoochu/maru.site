@@ -23,7 +23,9 @@
         <ul>
             <li> <a href="http://maroocorp.co.kr/theme/basic"><img src="./photo/email_icon.png"></a></li>
             <li> <a href="board.html"><img src="./photo/location_icon.png"></a></li>
-            <li> <a href="#"><img src="./photo/magnifying_icon.png"></a></li>
+            <li> <a href="#"><img src="./photo/magnifying_icon.png"></a>
+            </li>
+            
         </ul>
     </div>
 
@@ -52,6 +54,23 @@
                 <li><a href="#"><img src="photo/sns_vlive.png"></a></li>
             </ul>
         </div>
+        <script>
+            $(document).ready(function(){
+                var nav =$('header');
+                var navoffset = $('header').offset();
+
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 100){
+                    nav.addClass('on')
+                }else{
+
+                    nav.removeClass('on')
+                }
+               
+            });
+            });
+
+        </script>
     
     </fieldset>    
 </footer>

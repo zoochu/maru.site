@@ -44,7 +44,23 @@
                 <li> <a href="#"><img src="./photo/magnifying_icon.png"></a></li>
             </ul>
         </div>
+<!-- 
+        <script>
+            $(document).ready(function(){
+                var nav =$('header');
+                var navoffset = $('header').offset();
 
+            $(window).scroll(function(){
+                if($(this).scrollTop() >= navoffset.top){
+                    nav.css({'position':'fixed','top':0})
+                    nav.css({'background-color':'#aacfda','top':0})
+                }else{
+                    nav.css({'position':'absolute','top':76, })
+                }
+               
+            });
+            });
+        </script> -->
     </header>
 
 
@@ -61,7 +77,7 @@
 
         <div class=secondpage-2>    
         <!-- * 버튼 누르면 ABOUT 혹은 CONTACT에 관한 페이지 나오기 -->
-            <div class="about">
+            <div class="about on">
                 <!-- about -->
                 <div class="company2">
                     <p class="blue">음악,영화,드라마,공연 등 <b>엔터테인먼트</b><span>의</span></p>
@@ -106,13 +122,8 @@
                 </div>
             </div>
 
-
-
-            
-            <!-- contact -->
-            <div class="about">    
-             
-
+        <!-- contact -->
+        <div class="about">  
             <div class="contact">
                 <h2>
                     오시는길
@@ -158,14 +169,28 @@
             elBtn[i].addEventListener('click',function(){
                 for(let j=0;j<2;j++){
                     elBtn[j].classList.remove('active');
-                    elCon[j].classList.remove('.contact');
+                    elCon[j].classList.remove('on');
                 }
                 elBtn[i].classList.add('active');
-                elCon[i].classList.add('.contact');
+                elCon[i].classList.add('on');
             });
         }
         
+  
+            $(document).ready(function(){
+                var nav =$('header');
+                var navoffset = $('header').offset();
 
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 100){
+                    nav.addClass('on')
+                }else{
+
+                    nav.removeClass('on')
+                }
+               
+            });
+            });
     </script>
 
 
