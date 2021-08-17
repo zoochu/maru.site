@@ -20,10 +20,18 @@ header {
   width: 100%;
   height: 13vh;
   background: #aacfda;
-  z-index: 999;
+  z-index: 990;
   left: 0%;
   top: 0;
   position: fixed;
+}
+
+.head {
+  z-index: 1000;
+  background: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 2%;
 }
 
 .head a img {
@@ -56,16 +64,15 @@ header {
 .menu ul li a::after {
   content: "";
   display: block;
-  width: 0;
+  width: 0%;
   height: 6px;
   background: rgba(94, 174, 186, 0.5);
   position: absolute;
   bottom: 0px;
-  left: 0;
+  left: 0px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   z-index: 0;
-  animation: reverse;
 }
 
 .menu ul li a:hover::after {
@@ -141,20 +148,33 @@ header {
 .main2 .blue {
   color: #5eaeba;
   font-size: 40px;
+  -webkit-animation: fade 0.5s both;
+          animation: fade 0.5s both;
+}
+
+.main2 .blue b {
+  -webkit-animation: fade 0.5s both;
+          animation: fade 0.5s both;
 }
 
 .main2 .blue span {
   color: black;
+  -webkit-animation: fade 0.5s both;
+          animation: fade 0.5s both;
 }
 
 .main2 p {
   font-size: 40px;
+  -webkit-animation: fade 1s 0.5s both;
+          animation: fade 1s 0.5s both;
 }
 
 .main2 .grey {
   font-size: 15px;
   color: #9ba1ad;
   margin: 20px 0 30px;
+  -webkit-animation: fade 1.5 1s both;
+          animation: fade 1.5 1s both;
 }
 
 .main2 button {
@@ -162,6 +182,35 @@ header {
   color: white;
   padding: 10px 20px;
   cursor: pointer;
+  opacity: 0;
+  -webkit-animation: fade 1.8s 1.5s both;
+          animation: fade 1.8s 1.5s both;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 .main3 {
@@ -174,9 +223,28 @@ header {
   width: 100%;
 }
 
-.main3 .slider1 img {
+.main3 .slider1 a span {
+  position: absolute;
+  font-size: 20px;
+  top: 42%;
+  color: white;
+  margin: 0 20px;
+  z-index: 2;
+}
+
+.main3 .slider1 a button {
+  position: absolute;
+  top: 50%;
+  padding: 5px;
+  margin: 0 20px;
+  z-index: 2;
+  border: none;
+  border-radius: 3px;
+}
+
+.main3 .slider1 a img {
   width: 100%;
-  opacity: 90%;
+  opacity: 80%;
 }
 
 .main4 {
@@ -193,23 +261,20 @@ header {
   width: 100%;
 }
 
-.main4 .left::before {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 5px;
-  background: #5eaeba;
-  position: absolute;
-  top: 85px;
-  left: 110px;
-}
-
 .main4 p {
   text-align: left;
   font-size: 35px;
   margin: 0 0 30px;
   padding: 20px 70px 0;
   color: black;
+}
+
+.main4 p::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: #5eaeba;
 }
 
 .main4 span {
@@ -239,7 +304,12 @@ header {
   text-decoration: none;
   font-size: 20px;
   color: black;
-  padding: 0 50px;
+  padding: 0 40px;
+}
+
+.right ul li a:hover {
+  color: #5eaeba;
+  text-decoration: underline;
 }
 
 .right ul li span {
@@ -331,26 +401,14 @@ fieldset .bottom-right ul li a img {
   background-color: rgba(171, 208, 217, 0.3);
 }
 
-p {
+.company p {
   text-align: center;
   color: #9ba1ad;
   margin-top: 30px;
   font-size: 20px;
 }
 
-.btn1 {
-  font-size: 20px;
-  font-weight: 900;
-  padding: 20px 140px;
-  color: white;
-  border: none;
-  background-color: #5eaeba;
-  margin-right: 35px;
-  margin-top: 100px;
-  cursor: pointer;
-}
-
-.btn2 {
+.company button {
   font-size: 20px;
   font-weight: 900;
   padding: 20px 140px;
@@ -359,6 +417,10 @@ p {
   background-color: #212224;
   margin-top: 100px;
   cursor: pointer;
+}
+
+.company button.active {
+  background: #5eaeba;
 }
 
 .secondpage-2 {
@@ -397,8 +459,9 @@ p {
   margin: 0 auto;
   width: 100%;
   padding-top: 10vh;
-  line-height: 35px;
+  line-height: 45px;
   text-align: center;
+  font-size: 20px;
 }
 
 .company3 img {
@@ -408,6 +471,7 @@ p {
 }
 
 .company3 p {
+  padding-top: 40px;
   color: #9ba1ad;
 }
 
@@ -435,12 +499,11 @@ p {
 .company4 h2::before {
   content: '';
   display: block;
-  width: 40px;
+  width: 50px;
   height: 5px;
   background: #5eaeba;
   position: absolute;
   margin: -13px 0px;
-  left: 205px;
 }
 
 .company4 img {
@@ -468,8 +531,9 @@ p {
       flex-shrink: 0;
   -webkit-transform: translateX(19%);
           transform: translateX(19%);
-  padding: 50px 30px;
+  padding: 6% 50px;
   line-height: 40px;
+  font-size: 22px;
 }
 
 .company4-1 .a p {
@@ -486,8 +550,9 @@ p {
       flex-shrink: 0;
   -webkit-transform: translateX(9%);
           transform: translateX(9%);
-  padding: 50px 70px;
+  padding: 6% 60px;
   line-height: 40px;
+  font-size: 22px;
 }
 
 .company4-1 .b p {
@@ -502,12 +567,271 @@ p {
   height: 330px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  padding: 50px 30px;
+  padding: 6% 70px;
   line-height: 40px;
+  font-size: 22px;
 }
 
 .company4-1 .c p {
   position: relative;
   color: white;
+}
+
+.contact {
+  padding: 10%;
+}
+
+.contact h2 {
+  font-size: 40px;
+  font-weight: lighter;
+  padding-bottom: 2%;
+}
+
+.contact p {
+  margin: 20px 0 0;
+  font-size: 20px;
+}
+
+.contact p b {
+  color: #5eaeba;
+}
+
+.contact::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: #5eaeba;
+  left: 70px;
+}
+
+.thirdpage {
+  position: relative;
+  background: #f7f8fa;
+}
+
+.company {
+  background: #f7f8fa;
+  position: relative;
+  padding-top: 30vh;
+  text-align: center;
+}
+
+.company h2 {
+  position: relative;
+  font-weight: 100;
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.company h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16%;
+  height: 10px;
+  bottom: 1px;
+  top: 40px;
+  left: 42%;
+  z-index: 0;
+  background-color: rgba(171, 208, 217, 0.3);
+}
+
+.audition {
+  background: white;
+  margin: 7% 5%;
+  border-radius: 20px;
+}
+
+.attend {
+  padding: 7% 20% 5% 10%;
+}
+
+.attend h2 {
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+.attend h2::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 5px;
+  background: #5eaeba;
+  top: 520px;
+  left: 70px;
+}
+
+.attend a {
+  color: #9ba1ad;
+  font-size: 20px;
+  padding-bottom: 10%;
+}
+
+.attend span {
+  color: black;
+  padding-bottom: 10%;
+}
+
+.step {
+  text-align: center;
+  padding-bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 20%;
+  width: 100%;
+  position: relative;
+  color: white;
+}
+
+.step .first {
+  background: url("./photo/about_icon_bg01.png") no-repeat left top;
+  padding: 0;
+  width: 330px;
+  height: 330px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transform: translateX(18%);
+          transform: translateX(18%);
+  padding: 8% 50px;
+  line-height: 40px;
+  font-size: 22px;
+  z-index: 2;
+}
+
+.step .first h4 {
+  font-size: 30px;
+}
+
+.step .first span {
+  position: relative;
+  color: white;
+}
+
+.step .second {
+  background: url("./photo/about_icon_bg02.png") no-repeat;
+  padding: 0;
+  width: 330px;
+  height: 330px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transform: translateX(9%);
+          transform: translateX(9%);
+  padding: 8% 60px;
+  line-height: 40px;
+  font-size: 22px;
+}
+
+.step .second h4 {
+  font-size: 30px;
+}
+
+.step .second span {
+  position: relative;
+  color: white;
+}
+
+.step .third {
+  background: url("./photo/about_icon_bg03.png") no-repeat;
+  padding: 0;
+  width: 330px;
+  height: 330px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 8% 60px;
+  line-height: 40px;
+  font-size: 22px;
+}
+
+.step .third h4 {
+  font-size: 30px;
+}
+
+.step .third span {
+  position: relative;
+  color: white;
+}
+
+.fourth {
+  padding-left: 5%;
+}
+
+.fourth a {
+  font-size: 20px;
+  color: #9ba1ad;
+}
+
+.email {
+  padding: 5%;
+}
+
+.email h2 {
+  font-size: 40px;
+}
+
+.email p {
+  list-style: none;
+  text-align: center;
+}
+
+.email ul li {
+  list-style-type: none;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+.email ul li input {
+  padding: 10px 30px;
+}
+
+.email ul li .blackbtn {
+  background: black;
+  color: white;
+  padding: 10px 30px;
+}
+
+.email ul li .mintbtn {
+  background: #5eaeba;
+  color: white;
+  padding: 10px 30px;
+}
+
+.check {
+  padding: 0 5%;
+}
+
+.check h2 {
+  font-size: 40px;
+}
+
+.check .lable {
+  left: 10%;
+}
+
+.privacy_text {
+  margin: 3% 10%;
+  height: 250px;
+  padding: 10px 20px;
+  overflow-y: auto;
+  border-radius: 10px;
+  border: 1px solid #e7eaee;
+  color: #9ba1ad;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.checkboxbtn {
+  margin-bottom: 5%;
+  position: relative;
+  padding: 10px 50px;
+  background: black;
+  color: white;
+  top: 10vh;
+  left: 20%;
+  display: inline-block;
+  width: 260px;
+  height: 60px;
+  font-size: 18px;
 }
 /*# sourceMappingURL=maru.css.map */
