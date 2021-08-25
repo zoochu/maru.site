@@ -5,6 +5,8 @@ box-sizing: border-box;
 font-family: 'Montserrat', sans-serif;
 
 }
+
+
 // 마루기획 상단바 시작
 header{
     display: flex;
@@ -20,9 +22,6 @@ header{
     background: rgba(94,174,186,0);
     transition: 0.5s;
     
-    @media only screen and (max-width:1300px){
-        min-width: 320px;
-    }
 
     &::after{
         display: block;
@@ -30,6 +29,34 @@ header{
         clear: both;
         content: "";
     }
+
+    .menu-trigger,.menu-trigger span{
+        display: inline-block;
+        transition: all 0.4s;
+        box-sizing: border-box;
+    }
+    .menu-trigger {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        // display: ;
+            span{
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #fff;
+                border-radius: 4px;
+                    &:nth-of-type(1) {top: 0;}
+                    &:nth-of-type(2) {top: 50%;transform: translateY(-50%);}
+                    &:nth-of-type(3) {bottom: 0;}
+            }
+        &.active-2{
+            span:nth-of-type(1){transform: translateY(9px) rotate(-45deg);}
+            span:nth-of-type(2){opacity: 0;}
+            span:nth-of-type(3){transform: translateY(-19px) rotate(45deg);}
+        }
+      }
     
 }
 
@@ -103,23 +130,75 @@ header.on{
                 float:left;
                 img{height: 20px;
                     margin: 0 -120%;
+                    
             }
         }
     }
+}
+
+.mo_navi_open{
+    position: relative;
+    span{ position: absolute;
+        left: 93%;
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        border-radius: 4px;}
+    
+    // .first{    
+    //     // border:3px solid #000; width:100%; margin:0 auto; padding:0;
+    //     // border-radius: 4px;
+    //     // top: 6px;
+    //     // left: 0;
+    //     position: absolute;
+    //     left: 93%;
+    //     width: 30px;
+    //     height: 3px;
+    //     background-color: #000;
+    //     border-radius: 4px;
+        
+    //  }
+    //  .second{
+    //     // border:3px solid #000; width:100%; margin:0 auto; padding:0;
+    //     // border-radius: 4px;
+    //     //  top: 12px;
+    //     //  width: 90%;
+    //     //  right: 0;
+    //     position: absolute;
+    //     left: 93%;
+    //     width: 30px;
+    //     height: 3px;
+    //     background-color: #000;
+    //     border-radius: 4px;
+    //  }
+    //  .third{
+    //     // border:3px solid #000; width:100%; margin:0 auto; padding:0;
+    //     // border-radius: 4px;
+    //     //  top: 18px;
+    //     //  left: 0;
+    //     position: absolute;
+    //     left: 93%;
+    //     width: 30px;
+    //     height: 3px;
+    //     background-color: #000;
+    //     border-radius: 4px;
+    //  }
 }
 
 // 마루기획 상단바 끝
 
 .main{
     .main-title{
+        display: none;
         text-align: center;
         p{margin: 0 0 5px;
           font-size: 16px;
           margin-bottom: 5px;
         }
         b,span{font-size: 30px;
+    
         }
-
+        display: none;
     }
 
 
@@ -138,6 +217,7 @@ header.on{
             }
         }
     }
+    .s_title{display: none;}
 }
 
     .s_btn_prev{
@@ -309,75 +389,7 @@ header.on{
         
     }
 
-
-    // @media (min-width:360px){
-    //     .main4{display: flex;
-    //         width: 100%;
-            
-    //         .left{
-    //             position: relative;
-    //             padding:80px 40px;
-    //             background:#e5ecee8f;
-    //             width: 100%;
-        
-    //             &::before{content: '';
-    //                 display: block;
-    //                 width: 40px;
-    //                 height: 5px;
-    //                 background: #5eaeba;
-    //                 position: absolute;
-    //                 top: 85px;
-    //                 left: 110px;
-    //             }
-        
-    //             }
-                
-    //             p{
-    //                 text-align: left;
-    //                 font-size: 25px;
-    //                 margin: 0 0 30px;
-    //                 padding: 20px 70px 0;
-    //                 color: black;
-    //             }
-    //             span{
-    //                 color: #9ba1ad;
-    //                 font-size: 16px;   
-    //                 padding: 20px 70px 0; 
-    //             }
-    //         }
-        
-    //         .right{
-    //             width: 100%;
-    //             padding:80px 40px;
-                
-    //             ul{
-    //                 display: block;
-        
-    //                 li{list-style: none;
-    //                    padding: 10px;
-    //                    width: 100%;
-    //                    position: relative;
-    //                    float:left;
-                        
-    //                     a{ 
-    //                         text-decoration: none;
-    //                         font-size: 5px;
-    //                         color: black;
-    //                         padding: 0 40px ;
-    //                         &:hover{color:#5eaeba;
-    //                         text-decoration: underline;
-    //                             }
-        
-    //                     }
-    //                     span{
-    //                         color: #9ba1ad;
-    //                         font-size: 16px;}
-    //                 }
-    //             }
-                
-    //         }
-    // }
-
+   
 
     
 // 마루기획 메인 끝
@@ -598,90 +610,95 @@ fieldset{
 
     img{
         padding-left: 10%;
-        margin-right: -186px;}
+        margin-right: -186px;
     }
+}
 
-.company4-1{
-    text-align: center;
-    padding-bottom: 10px;
-    display: flex;
-    padding-left: 200px;
-    width: 100%;
-    margin: 0 auto;
-    // color: white;
-    .a{background: url("./photo/about_icon_bg01.png") no-repeat left top;
-       padding: 0;
-       width: 330px;
-       height: 330px;
-       flex-shrink: 0;
-       transform: translateX(19%);
-       padding: 6% 50px;
-       line-height: 40px;
-       font-size: 22px;
-       
-       
-       
-        img{}
-        p{position: relative;
-            color: white;
-        }
-    }
-    .b{background: url("./photo/about_icon_bg02.png") no-repeat;
-        padding: 0;
+    .company4-1{
+        position: relative;
+        text-align: center;
+        padding-bottom: 10px;
+        display: flex;
+        padding-left: 10%;
+        width: 100%;
+        margin: 0 auto;
+        // color: white;
+        .a{background: url("./photo/about_icon_bg01.png") no-repeat left top;
+        position: relative;
+        padding: 0%;
         width: 330px;
         height: 330px;
         flex-shrink: 0;
-        transform: translateX(9%); 
-        padding: 6% 60px;
+        transform: translateX(19%);
+        padding: 6% 10%;
         line-height: 40px;
         font-size: 22px;
-        img{}
-        p{position: relative;
-            color: white;}
+        
+        
+        
+            img{}
+            p{position: relative;
+                color: white;
+            }
+        }
+        .b{background: url("./photo/about_icon_bg02.png") no-repeat;
+            position: relative;
+            padding: 0;
+            width: 330px;
+            height: 330px;
+            flex-shrink: 0;
+            transform: translateX(9%); 
+            padding: 6% 60px;
+            line-height: 40px;
+            font-size: 22px;
+            img{}
+            p{position: relative;
+                color: white;}
+        }
+        .c{background: url("./photo/about_icon_bg03.png") no-repeat;
+            position: relative;
+            padding: 0%;
+            width: 330px;
+            height: 330px;
+            flex-shrink: 0;
+            padding: 6% 70px;
+            line-height: 40px;
+            font-size: 22px;
+        //    transform: translateX(10%);
+            img{}
+            p{position: relative;
+                color: white;}
+        }
     }
-    .c{background: url("./photo/about_icon_bg03.png") no-repeat;
-        padding: 0%;
-        width: 330px;
-       height: 330px;
-       flex-shrink: 0;
-       padding: 6% 70px;
-       line-height: 40px;
-       font-size: 22px;
-    //    transform: translateX(10%);
-        img{}
-        p{position: relative;
-            color: white;}
-    }
-}
-.contact{ 
-    padding:10%;
-    h2{
-        font-size: 40px;
-        font-weight:lighter;
-        padding-bottom:  2%;
+    .contact{ 
+        padding:10%;
+        h2{
+            font-size: 40px;
+            font-weight:lighter;
+            padding-bottom:  2%;
+            
+        }
+        p{ margin: 20px 0 0;
+            font-size: 20px;
+            b{color:#5eaeba }
+            span{}
+        }
+        &::before{content: '';
+            display: block;
+            width: 40px;
+            height: 5px;
+            background: #5eaeba;
+            // position: absolute;
+            
+            left: 70px;
+        }
         
     }
-    p{ margin: 20px 0 0;
-        font-size: 20px;
-        b{color:#5eaeba }
-        span{}
-    }
-    &::before{content: '';
-        display: block;
-        width: 40px;
-        height: 5px;
-        background: #5eaeba;
-        // position: absolute;
-        
-        left: 70px;
-    }
-    
-}
 
-.about{display: none;}
-.about.on{
-    display: block;
-}
+    .about{display: none;}
+    .about.on{
+        display: block;
+    }
 
 //audition
     .thirdpage{position: relative;
@@ -716,16 +733,19 @@ fieldset{
                 background-color: rgba(171,208,217,0.3);
                 
                 
-                }
+            }
         }
     }
-    .audition{ background:white;
+    .audition{ 
+        background:white;
         margin: 7% 5%;
-        border-radius: 20px;}
+        border-radius: 20px;
+    }
     .attend{
         padding: 7% 20% 5% 10%;
        
-        h2{font-size: 40px;
+        h2{
+            font-size: 40px;
             padding-bottom: 20px;
             &::before{content: '';
                 display: block;
@@ -737,14 +757,16 @@ fieldset{
                 left: 70px;
 
             }
-         }
+        }
+
         a{ 
             color: #9ba1ad;
             font-size: 20px;
             padding-bottom: 10%;
         }
         span{color:black;
-            padding-bottom: 10%;}
+            padding-bottom: 10%;
+        }
     }
 
     .step{
@@ -768,11 +790,14 @@ fieldset{
            z-index: 2;
            
            h4{font-size: 30px;}
-            span{position: relative;
+            span{
+                position: relative;
                 color: white;
             }
         }
-        .second{background: url("./photo/about_icon_bg02.png") no-repeat;
+    
+        .second{
+            background: url("./photo/about_icon_bg02.png") no-repeat;
             padding: 0;
             width: 330px;
             height: 330px;
@@ -785,9 +810,11 @@ fieldset{
             h4{font-size: 30px;}
             span{position: relative;
                 color: white;
-                }
             }
-        .third{background: url("./photo/about_icon_bg03.png") no-repeat;
+        }
+
+        .third{
+            background: url("./photo/about_icon_bg03.png") no-repeat;
             padding: 0;
             width: 330px;
             height: 330px;
@@ -797,18 +824,19 @@ fieldset{
             line-height: 40px;
             font-size: 22px;
             h4{font-size: 30px;}            
-            span{position: relative;
-                color: white;}
+            span{
+                position: relative;
+                color: white;
             }
-            
         }
+    }
 
     .fourth{
         padding-left: 5%;
         a{font-size: 20px;
         color:#9ba1ad;}
         
-        }
+    }
 
     .email{padding: 5%;
         h2{font-size: 40px;}
@@ -837,11 +865,10 @@ fieldset{
     }
 
 
-    .check{padding: 0 5%;
+    .check{
+        padding: 0 5%;
         h2{font-size: 40px;}
         .lable{left: 10%;}
-    
-        
     }
 
     .privacy_text {
@@ -868,6 +895,782 @@ fieldset{
             width: 260px;
             height: 60px;
             font-size: 18px;
+    }
+
+
+    @media (max-width:1000px){
+        .mo_navi_open{
+            display:block;
         }
 
-    
+
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;   
+            width: 100%;
+            height: 6vh;
+            // background:#aacfda;
+            z-index: 990;
+            left:0%; top:0;
+            position: fixed;
+            background: rgba(94,174,186,0);
+            transition: 0.5s;
+            
+        
+            &::after{
+                display: block;
+                visibility: hidden;
+                clear: both;
+                content: "";
+            }
+            
+        }
+        
+        header.on{
+            z-index: 1000;
+            background: #aacfd8 ;
+        
+        }
+        .head{
+            z-index: 1000;
+            background: transparent;
+            transition: 0.3s; 
+            margin-left: -7%;
+            a img{
+                height: 25px; 
+                padding: 0;
+                margin: 0 70%;
+                 
+                
+            }
+                }
+     
+        
+
+        
+        .menu{display:none;}
+        .menu-b{display:none}
+        .mo_navi_open{
+            display:block;
+        }
+
+
+        .main{
+            .main-title{
+                position: absolute;
+                text-align: center;
+                z-index: 999;
+                p{margin: 100px 35vh 5px;
+                  font-size: 16px;
+                  margin-bottom: 5px;
+                }
+                b,span{font-size: 30px;
+                }
+                display: block;
+            }
+        
+         
+        
+            .slider{
+                display: flex;
+                position: relative;
+                div{
+                    // width: 1580px;
+                    height: 100%;
+                    margin: 0 auto;
+                    position: relative;
+                    
+                    img{
+                        height: 100%;
+                    
+                    }
+                }
+            }
+            
+        }
+        
+            .s_btn_prev{
+             position: absolute;
+             font-size: 26px;
+             img{cursor: pointer;}
+            
+            }
+            .s_btn_next{
+                position: absolute;
+                img{cursor: pointer;}
+               }
+        
+        
+        
+        .main2{
+            padding: 110px 0 110px; 
+            text-align: center; 
+            background: url(./photo/main_bg.png) no-repeat left top;
+            background-size: cover;
+            // opacity: 0;
+            // animation: fade-up 0.5s both;
+            .blue{color: #5eaeba;
+                font-size: 40px;
+                b{}
+                span{color: black;
+                    
+                }
+            }
+            p{
+                font-size: 40px;
+                
+            }
+            .grey{
+                font-size: 15px;
+                color: #9ba1ad;
+                margin: 20px 0 30px;
+                
+                
+            }
+            a{
+                background:black;
+                color: white;
+                padding: 10px 20px;
+                cursor: pointer;
+                opacity: 0;
+                
+                text-decoration: none;
+                border-radius: 2px;
+            }
+            &.on .blue{animation: fade 0.5s both;}
+            &.on .blue b{animation: fade 0.5s both;}
+            &.on .blue span{animation: fade 0.5s both;}
+            &.on p{animation: fade 1s 0.5s both;;}
+            &.on .grey{animation: fade 1.5 1s both;}
+            &.on a{animation: fade 1.8s 1.5s both;}
+        
+            @keyframes fade{
+                0% {
+                    opacity:0;
+                    transform:translateY(50px);
+                }
+                100% {
+                    opacity: 1;
+                    transform:translateY(0);
+                }
+                
+                }
+        }
+        
+        
+        
+        .main3{
+            display: flex;
+            .slider1{
+                    width:100%;
+                    a{
+                        span{position: absolute;
+                        font-size: 20px;
+                        top:42%;
+                        color: white;
+                        margin:0 20px;
+                        z-index: 2;
+                        }
+                        button{
+                        position:absolute;
+                        top:50%;
+                        padding:5px;
+                        margin:0 20px;
+                        z-index: 2;
+                        
+                        border:none; 
+                        // solid 1px #212224;
+                        border-radius: 3px;
+                        }
+        
+                            
+                        img{width:100%;
+                            
+                            opacity:80%
+                            }
+                    
+                    }
+            }
+        }
+        // 메뉴 끝
+
+        .main4{
+            display: block;
+            position: relative;
+            width: 100%;
+            
+            .left{
+                position: relative;
+                padding:35px 20px;
+                background:#e5ecee8f;
+                width: 100%;
+        
+                // &::before{content: '';
+                //     display: block;
+                //     width: 40px;
+                //     height: 5px;
+                //     background: #5eaeba;
+                //     position: absolute;
+                //     top: 85px;
+                //     left: 110px;
+                    p{
+                        text-align: left;
+                        font-size: 30px;
+                        margin: 0 0 15px;
+                        padding: 20px 70px 0;
+                        color: black;
+                    }
+                    span{
+                        color: #9ba1ad;
+                        font-size: 16px;   
+                        // padding: 10px 70px 0; 
+                        }
+                }
+        
+                
+             
+            }
+        
+            .right{
+                width: 100%;
+                padding:70px 40px 70px;
+                
+                ul{
+                    display: block;
+        
+                    li{list-style: none;
+                       padding: 8px;
+                       width: 100%;
+                       position: relative;
+                       float:left;
+                       bottom: 3vh;
+                        
+                        a{ 
+                            text-decoration: none;
+                            font-size: 20px;
+                            color: black;
+                            padding: 0 40px ;
+                            &:hover{color:#5eaeba;
+                            text-decoration: underline;
+                                }
+        
+                        }
+                        span{
+                            color: #9ba1ad;
+                            font-size: 15px;}
+                    }
+                }
+               
+            }
+            
+
+// 마루기획 하단 시작
+
+    fieldset{ 
+        width: 100%;
+        padding: 2% 2vh;
+        border: none;    
+        background:#aacfda;
+        display: flex; 
+        // float: left;   
+        width: 100%;
+        position: relative;
+        
+        .bottom-logo{
+            height: 60px;
+            margin: auto 10px;
+            display: flex;
+            // align-items: center;
+            // justify-content: center;
+        }
+
+            ul{
+                display: block;
+                list-style: none;
+                line-height: 35px;
+                width: 100%;
+            
+                li{
+                    .middle-top{}
+                    .middle-middle{}
+                    .middle-bottom b{
+                        font-size: 10px;
+                        margin: 15px 0 0;
+                    }
+                }
+        }
+
+        .bottom-right{
+            display: block;
+            width: 100%;
+
+        
+            ul{
+                margin-left: 20px;
+                li{float: bottom; 
+                    
+                    
+                    a{ 
+                        // margin-left: 20px;
+                        // text-align: right;
+                        img{
+                            height: 16px;
+                            margin-left: 20px;
+                            align-items: bottom;
+                        }
+                        
+                    }    
+                }
+            }
+        }
+        
+    }
+
+    // .company4-1{
+       
+    //     text-align: center;
+    //     padding-bottom: 10px;
+    //     display: flex;
+    //     padding-left: 200px;
+    //     width: 100%;
+    //     margin: 0 auto;
+    //     // color: white;
+    //     .a{background: url("./photo/about_icon_bg01.png") no-repeat left top;
+    //     padding: 0;
+    //     width: 300px;
+    //     height: 330px;
+    //     flex-shrink: 0;
+    //     transform: translateX(19%);
+    //     padding: 6% 50px;
+    //     line-height: 40px;
+    //     font-size: 22px;
+        
+        
+        
+    //         img{}
+    //         p{position: relative;
+    //             color: white;
+    //         }
+    //     }
+    //     .b{background: url("./photo/about_icon_bg02.png") no-repeat;
+    //         padding: 0;
+    //         width: 330px;
+    //         height: 330px;
+    //         flex-shrink: 0;
+    //         transform: translateX(9%); 
+    //         padding: 6% 60px;
+    //         line-height: 40px;
+    //         font-size: 22px;
+    //         img{}
+    //         p{position: relative;
+    //             color: white;}
+    //     }
+    //     .c{background: url("./photo/about_icon_bg03.png") no-repeat;
+    //         padding: 0%;
+    //         width: 330px;
+    //     height: 330px;
+    //     flex-shrink: 0;
+    //     padding: 6% 70px;
+    //     line-height: 40px;
+    //     font-size: 22px;
+    //     //    transform: translateX(10%);
+    //         img{}
+    //         p{position: relative;
+    //             color: white;}
+    //     }
+    // }    
+
+
+    }
+
+
+
+    @media (max-width:1200px){
+        .mo_navi_open{
+            display:block;
+        }
+
+
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;   
+            width: 100%;
+            height: 6vh;
+            // background:#aacfda;
+            z-index: 990;
+            left:0%; top:0;
+            position: fixed;
+            background: rgba(94,174,186,0);
+            transition: 0.5s;
+            
+        
+            &::after{
+                display: block;
+                visibility: hidden;
+                clear: both;
+                content: "";
+            }
+            
+        }
+        
+        header.on{
+            z-index: 1000;
+            background: #aacfd8 ;
+        
+        }
+        .head{
+            z-index: 1000;
+            background: transparent;
+            transition: 0.3s; 
+            margin-left: -7%;
+            a img{
+                height: 25px; 
+                padding: 0;
+                margin: 0 70%;
+                 
+                
+            }
+                }
+     
+        
+
+        
+        .menu{display:none;}
+        .menu-b{display:none}
+        .mo_navi_open{
+            display:block;
+        }
+
+
+        .main{
+            .main-title{
+                position: absolute;
+                text-align: center;
+                z-index: 999;
+                p{margin: 100px 35vh 5px;
+                  font-size: 16px;
+                  margin-bottom: 5px;
+                }
+                b,span{font-size: 30px;
+                }
+                display: block;
+            }
+        
+         
+        
+            .slider{
+                display: flex;
+                position: relative;
+                div{
+                    // width: 1580px;
+                    height: 100%;
+                    margin: 0 auto;
+                    position: relative;
+                    
+                    img{
+                        height: 100%;
+                    
+                    }
+                }
+            }
+            
+        }
+        
+            .s_btn_prev{
+             position: absolute;
+             font-size: 26px;
+             img{cursor: pointer;}
+            
+            }
+            .s_btn_next{
+                position: absolute;
+                img{cursor: pointer;}
+               }
+        
+        
+        
+        .main2{
+            padding: 110px 0 110px; 
+            text-align: center; 
+            background: url(./photo/main_bg.png) no-repeat left top;
+            background-size: cover;
+            // opacity: 0;
+            // animation: fade-up 0.5s both;
+            .blue{color: #5eaeba;
+                font-size: 40px;
+                b{}
+                span{color: black;
+                    
+                }
+            }
+            p{
+                font-size: 40px;
+                
+            }
+            .grey{
+                font-size: 15px;
+                color: #9ba1ad;
+                margin: 20px 0 30px;
+                
+                
+            }
+            a{
+                background:black;
+                color: white;
+                padding: 10px 20px;
+                cursor: pointer;
+                opacity: 0;
+                
+                text-decoration: none;
+                border-radius: 2px;
+            }
+            &.on .blue{animation: fade 0.5s both;}
+            &.on .blue b{animation: fade 0.5s both;}
+            &.on .blue span{animation: fade 0.5s both;}
+            &.on p{animation: fade 1s 0.5s both;;}
+            &.on .grey{animation: fade 1.5 1s both;}
+            &.on a{animation: fade 1.8s 1.5s both;}
+        
+            @keyframes fade{
+                0% {
+                    opacity:0;
+                    transform:translateY(50px);
+                }
+                100% {
+                    opacity: 1;
+                    transform:translateY(0);
+                }
+                
+                }
+        }
+        
+        
+        
+        .main3{
+            display: flex;
+            .slider1{
+                    width:100%;
+                    a{
+                        span{position: absolute;
+                        font-size: 20px;
+                        top:42%;
+                        color: white;
+                        margin:0 20px;
+                        z-index: 2;
+                        }
+                        button{
+                        position:absolute;
+                        top:50%;
+                        padding:5px;
+                        margin:0 20px;
+                        z-index: 2;
+                        
+                        border:none; 
+                        // solid 1px #212224;
+                        border-radius: 3px;
+                        }
+        
+                            
+                        img{width:100%;
+                            
+                            opacity:80%
+                            }
+                    
+                    }
+            }
+        }
+        // 메뉴 끝
+
+        .main4{
+            display: block;
+            position: relative;
+            width: 100%;
+            
+            .left{
+                position: relative;
+                padding:35px 20px;
+                background:#e5ecee8f;
+                width: 100%;
+        
+                // &::before{content: '';
+                //     display: block;
+                //     width: 40px;
+                //     height: 5px;
+                //     background: #5eaeba;
+                //     position: absolute;
+                //     top: 85px;
+                //     left: 110px;
+                    p{
+                        text-align: left;
+                        font-size: 30px;
+                        margin: 0 0 15px;
+                        padding: 20px 70px 0;
+                        color: black;
+                    }
+                    span{
+                        color: #9ba1ad;
+                        font-size: 16px;   
+                        // padding: 10px 70px 0; 
+                        }
+                }
+        
+                
+             
+            }
+        
+            .right{
+                width: 100%;
+                padding:70px 40px 70px;
+                
+                ul{
+                    display: block;
+        
+                    li{list-style: none;
+                       padding: 8px;
+                       width: 100%;
+                       position: relative;
+                       float:left;
+                       bottom: 3vh;
+                        
+                        a{ 
+                            text-decoration: none;
+                            font-size: 20px;
+                            color: black;
+                            padding: 0 40px ;
+                            &:hover{color:#5eaeba;
+                            text-decoration: underline;
+                                }
+        
+                        }
+                        span{
+                            color: #9ba1ad;
+                            font-size: 15px;}
+                    }
+                }
+               
+            }
+            
+
+// 마루기획 하단 시작
+
+    fieldset{ 
+        width: 100%;
+        padding: 2% 2vh;
+        border: none;    
+        background:#aacfda;
+        display: flex; 
+        // float: left;   
+        width: 100%;
+        position: relative;
+        
+        .bottom-logo{
+            height: 60px;
+            margin: auto 10px;
+            display: flex;
+            // align-items: center;
+            // justify-content: center;
+        }
+
+            ul{
+                display: block;
+                list-style: none;
+                line-height: 35px;
+                width: 100%;
+            
+                li{
+                    .middle-top{}
+                    .middle-middle{}
+                    .middle-bottom b{
+                        font-size: 10px;
+                        margin: 15px 0 0;
+                    }
+                }
+        }
+
+        .bottom-right{
+            display: block;
+            width: 100%;
+
+        
+            ul{
+                margin-left: 20px;
+                li{float: bottom; 
+                    
+                    
+                    a{ 
+                        // margin-left: 20px;
+                        // text-align: right;
+                        img{
+                            height: 16px;
+                            margin-left: 20px;
+                            align-items: bottom;
+                        }
+                        
+                    }    
+                }
+            }
+        }
+        
+    }
+
+    // .company4-1{
+       
+    //     text-align: center;
+    //     padding-bottom: 10px;
+    //     display: flex;
+    //     padding-left: 200px;
+    //     width: 100%;
+    //     margin: 0 auto;
+    //     // color: white;
+    //     .a{background: url("./photo/about_icon_bg01.png") no-repeat left top;
+    //     padding: 0;
+    //     width: 300px;
+    //     height: 330px;
+    //     flex-shrink: 0;
+    //     transform: translateX(19%);
+    //     padding: 6% 50px;
+    //     line-height: 40px;
+    //     font-size: 22px;
+        
+        
+        
+    //         img{}
+    //         p{position: relative;
+    //             color: white;
+    //         }
+    //     }
+    //     .b{background: url("./photo/about_icon_bg02.png") no-repeat;
+    //         padding: 0;
+    //         width: 330px;
+    //         height: 330px;
+    //         flex-shrink: 0;
+    //         transform: translateX(9%); 
+    //         padding: 6% 60px;
+    //         line-height: 40px;
+    //         font-size: 22px;
+    //         img{}
+    //         p{position: relative;
+    //             color: white;}
+    //     }
+    //     .c{background: url("./photo/about_icon_bg03.png") no-repeat;
+    //         padding: 0%;
+    //         width: 330px;
+    //     height: 330px;
+    //     flex-shrink: 0;
+    //     padding: 6% 70px;
+    //     line-height: 40px;
+    //     font-size: 22px;
+    //     //    transform: translateX(10%);
+    //         img{}
+    //         p{position: relative;
+    //             color: white;}
+    //     }
+    // }    
+
+
+    }
+
