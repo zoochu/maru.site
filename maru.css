@@ -634,7 +634,7 @@ fieldset .bottom-right ul li a img {
       flex-shrink: 0;
   -webkit-transform: translateX(18%);
           transform: translateX(18%);
-  padding: 6% 1%;
+  padding: 6% 2%;
   line-height: 40px;
   font-size: 22px;
   z-index: 999;
