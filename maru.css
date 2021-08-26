@@ -632,11 +632,12 @@ fieldset .bottom-right ul li a img {
   height: 330px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  -webkit-transform: translateX(19%);
-          transform: translateX(19%);
-  padding: 6% 10%;
+  -webkit-transform: translateX(18%);
+          transform: translateX(18%);
+  padding: 6% 1%;
   line-height: 40px;
   font-size: 22px;
+  z-index: 999;
 }
 
 .company4-1 .a p {
@@ -657,6 +658,7 @@ fieldset .bottom-right ul li a img {
   padding: 6% 60px;
   line-height: 40px;
   font-size: 22px;
+  z-index: 998;
 }
 
 .company4-1 .b p {

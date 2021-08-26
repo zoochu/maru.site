@@ -629,10 +629,11 @@ fieldset{
         width: 330px;
         height: 330px;
         flex-shrink: 0;
-        transform: translateX(19%);
-        padding: 6% 10%;
+        transform: translateX(18%);
+        padding: 6% 1%;
         line-height: 40px;
         font-size: 22px;
+        z-index: 999;
         
         
         
@@ -651,6 +652,7 @@ fieldset{
             padding: 6% 60px;
             line-height: 40px;
             font-size: 22px;
+            z-index: 998;
             img{}
             p{position: relative;
                 color: white;}
